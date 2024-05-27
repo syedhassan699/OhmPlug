@@ -9,7 +9,9 @@ jobs:
         with:
           payload: |
             {
-            "text": "Git push done in the repo , OhmPlug"
+            "status": "${{ job.status }}",
+            "tag": "${{ steps.new-tag.outputs.new-tag-name }}",
+            "message": "Git push done in the repo , OhmPlug"
             }
         env:
           SLACK_WEBHOOK_URL: https://hooks.slack.com/services/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
