@@ -3,9 +3,9 @@
   on:
     pull_request:
       branches: [ master ]
-    push:
-      branches:
-        - master
+#    push:
+#      branches:
+#        - master
 
     #Allows you to run this action manually from the Action
     workflow_dispatch:

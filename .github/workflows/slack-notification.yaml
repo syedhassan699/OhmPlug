@@ -5,13 +5,11 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Send notification on Slack using Webhooks
-        uses: slackapi/slack-github-action@v1.24.0
+        uses: slackapi/slack-github-action@v1.26.0
         with:
           payload: |
             {
-            "status": "${{ job.status }}",
-            "tag": "${{ steps.new-tag.outputs.new-tag-name }}",
-            "message":"${{env.APP_ID}} deployed to dev with tag ${{ steps.new-tag.outputs.new-tag-name }}"
+               "text": "Git push done in the repo , OhmPlug"
             }
         env:
           SLACK_WEBHOOK_URL: https://hooks.slack.com/services/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
