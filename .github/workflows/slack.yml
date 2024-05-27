@@ -7,7 +7,7 @@
     steps:
       - name: Notify slack
         env:
-          LACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_BOT_TOKEN: "xoxb-957707882544-7180279346580-eyXaYqa9v8FL4HwRt8vFbs5u"
         uses: pullreminders/slack-action@master
         with:
           args: '{\"channel\":\"C07554HPTHT\",\"text\":\"Hello world\"}'
