@@ -2,7 +2,7 @@ name: Slack Notifications
 
 on:
    workflow_run:
-    workflows: ["Build"]
+    workflows: ["AndroidBuild"]
     types:
       - completed
 
