@@ -35,3 +35,10 @@
           with:
             name: AndroidCICD.apk
             path: app/build/outputs/apk/debug/app-debug.apk
+
+        - name: Notify slack
+          env:
+            SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          uses: pullreminders/slack-action@master
+          with:
+            args: '{\"channel\":\"C07554HPTHT\",\"text\":\"Hello world\"}'
