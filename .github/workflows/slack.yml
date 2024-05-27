@@ -1,11 +1,9 @@
 name: Slack Notifications
 
 on:
-  workflow_run:
-    workflows: [ "Build" ]
-    types:
-      - completed
-
+  push:
+    branches:
+      - master
 jobs:
   notifySlack:
 
