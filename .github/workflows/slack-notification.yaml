@@ -1,14 +1,15 @@
-on: push
-name: Slack Notification Demo
+name: slack_github_action
+on: [push]
 jobs:
-  slackNotification:
-    name: Slack Notification Demo
+  slack_notifier:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - name: Slack Notification Demo
-        uses: bryannice/gitactions-slack-notification@2.0.0
+      - name: Send notification on Slack using Webhooks
+        uses: slackapi/slack-github-action@v1.24.0
+        with:
+          payload: |
+            {
+            "text": "Git push done in the repo , OhmPlug"
+            }
         env:
-          SLACK_INCOMING_WEBHOOK: https://hooks.slack.com/services/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
-          SLACK_MESSAGE: 'Demo''ing the Slack Notification'
-          SLACK_TITLE: 'Slack Notification Demo'
+          SLACK_WEBHOOK_URL: https://hooks.slack.com/services/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
